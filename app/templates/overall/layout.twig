@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {{ base_assets()|raw }}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+    {# SEO #}
+    <meta name="theme-color" content="#2196F3">
+    <meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+    <link rel="author" href="http://google.com/+PrinickNarváez" />
+    <link rel="publisher" href="http://google.com/+PrinickNarváez" />
+    <meta name="description"  content="{% block appDesc %}Esto es PRINICK, mi blog personal donde encontrarás una gran cantidad de tutoriales, descargas y noticias sobre video juegos que voy siguiendo personalmente.{% endblock %}" />
+    <meta name="keywords"  content="{% block appTags %}blogger,desarrollo,developer,tutoriales,juegos,descargas,prinick,brayan,narvaez,xnova,ogame,windows{% endblock %}" />
+    <meta name="google-site-verification" content="http://google.com/+PrinickNarváez" />
+
+    <meta property="og:title" content="{% block ogTitle %}PRINICK - Blogger y Videos Tutoriales{% endblock %}" />
+    <meta property="og:url" content="{% block ogUrl %}{{ config.site.url }}{% endblock %}" />
+    <meta property="og:image" content="views/assets/img/default.jpg" />
+    <meta property="og:site_name" content="PRINICK" />
+    <meta property="og:description" content="{% block ogDesc %}Esto es PRINICK y aquí encontrarás videos tutoriales de YouTube.{% endblock %}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{% block twitterTitle %}PRINICK - Blogger y Videos Tutoriales{% endblock %}" />
+    <meta name="twitter:description" content="{% block twitterDesc %}Esto es PRINICK y aquí encontrarás videos tutoriales de YouTube.{% endblock %}" />
+    <meta name="twitter:image" content="views/assets/img/default.jpg" />
+    
+    {# Google analytics #}
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-47456992-1', 'auto');
+          
+          ga('send', 'pageview');
+    </script>
+
+    {# Título #}
+    <title>{% block appTitle %}{{ config.site.name }}{% endblock %}</title>
+
+    {# CSS  #}
+    <link rel="shortcut icon" href="favicon.ico">    
+    <link href="views/assets/min/plugin-min.css" type="text/css" rel="stylesheet" />
+    <link href="views/assets/min/custom-min.css" type="text/css" rel="stylesheet" />
+    <link href="views/assets/css/jquery-confirm.min.css" type="text/css" rel="stylesheet" />
+    <link href="views/assets/css/ladda.min.css" type="text/css" rel="stylesheet" />
+    
+    {# Extras en el header #}
+    {% block appHeader %}
+      <!-- :) -->
+    {% endblock %}
+</head>
+<body id="top" class="scrollspy">
+
+    <!-- Pre Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <!--Navigation-->
+    <div class="navbar-fixed">
+        <nav id="nav_f" class="default_color" role="navigation">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="home/" id="logo-container" class="brand-logo">
+                        <img src="views/assets/img/logo.png" />
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="home/">Inicio & Tutoriales</a></li>
+                        <li><a href="http://www.ocrend.com/">Desarrollo Web</a></li>
+                        <li><a href="http://framework.ocrend.com/">Framework</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                    <ul id="nav-mobile" class="side-nav">
+                        <li><a href="home/">Inicio & Tutoriales</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    {# Cuerpo real #}
+    {% block appBody %}
+      <!-- :) -->
+    {% endblock %}
+
+    <!--Footer-->
+    <footer id="contact" class="page-footer default_color scrollspy">
+        <div class="container">  
+            <div class="row">
+                <div class="col l6 s12">
+                    <form class="col s12" id="contacto_form">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="mdi-action-account-circle prefix white-text"></i>
+                                <input id="icon_prefix" name="name" type="text" class="validate white-text">
+                                <label for="icon_prefix" class="white-text">Su Nombre</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="mdi-communication-email prefix white-text"></i>
+                                <input id="icon_email" name="email" type="email" class="validate white-text">
+                                <label for="icon_email" class="white-text">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="mdi-communication-phone prefix white-text"></i>
+                                <input id="icon_phone" name="phone" type="tel" class="validate white-text">
+                                <label for="icon_phone" class="white-text">Número de Teléfono</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="mdi-editor-mode-edit prefix white-text"></i>
+                                <textarea id="icon_prefix2" name="message" class="materialize-textarea white-text"></textarea>
+                                <label for="icon_prefix2" class="white-text">Mensaje</label>
+                            </div>
+                            <center>
+                                <button id="contacto" class="waves-effect waves-light red darken-1 ladda-button" data-color="mint" data-style="expand-right" data-size="s"><i class="mdi-content-send right white-text"></i> Enviar</button>
+                            </center>
+                        </div>
+                    </form>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Sobre Mí</h5>
+                    <ul>
+                        <li class="white-text">
+                            Desarrollador de aplicaciones web.
+                        </li>
+                        <li class="white-text">
+                            MEAN Stack & LAMP Stack.
+                        </li>
+                        <li class="white-text">
+                            JS & PHP Addict
+                        </li>
+                        <li class="white-text">
+                            Ingeniero Informático.
+                        </li>
+                        <li class="white-text">
+                            {{ calculate_age('28/10/1996') }} Años.
+                        </li>
+                    </ul>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Networks</h5>
+                    <ul>
+                        <li>
+                            <a class="white-text" href="http://www.youtube.com/user/prinick96?sub_confirmation=1">
+                                <i class="small fa fa-youtube-play white-text"></i> YouTube
+                            </a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://github.com/prinick96/">
+                                <i class="small fa fa-github-square white-text"></i> Github
+                            </a>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://www.facebook.com/prinick.narvaez">
+                                <i class="small fa fa-facebook-square white-text"></i> Facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright default_color">
+            <div class="container">
+                Sitio web desarrollado por <a class="white-text" href="http://www.ocrend.com">Ocrend Software</a> &copy; 2013-2017
+            </div>
+        </div>
+    </footer>
+    
+    {# Carga de jQuery #}
+    {% if config.framework.debug %}
+      {# jQuery para ver errores de ajax vía consola, no eliminar #}
+      <script src="views/app/js/jdev.min.js"></script>
+    {% else %}
+      {# jQuery para su plantilla, este puede ser modificado a voluntad #}
+      <script src="views/app/vendor/jquery/jquery.min.js"></script>
+    {% endif %}
+
+    <!--  Scripts -->
+    <script src="views/assets/js/spin.min.js"></script>
+    <script src="views/assets/js/ladda.min.js"></script>
+    <script src="views/assets/js/jquery-confirm.min.js"></script>
+    <script src="views/assets/js/modernizr.js"></script>
+    <script src="views/assets/js/materialize.min.js"></script>
+    <script src="views/assets/js/init.js"></script>
+    <script src="views/assets/min/custom-min.js"></script>
+    <script src="views/app/js/contacto/contacto.js"></script>
+
+    {# Footer #}
+    {% block appFooter %}
+      <!-- :) -->
+    {% endblock %}  
+
+    </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'overall/layout' %}
+
+{% block appHeader %}
+    <meta property="og:type" content="article" />
+{% endblock %}
+
+{% block appTitle %}{{ v.title }}{% endblock %}
+{% block ogTitle %}{{ v.title }}{% endblock %}
+{% block twitterTitle %}{{ v.title }}{% endblock %}
+
+{% block ogUrl %}{{ config.site.url }}ver/{{ url_amigable(v.title) }}/{{ v.url }}{% endblock %}
+
+{% block appDesc %}{{ v.desc[:159] }}{% endblock %}
+{% block ogDesc %}{{ v.desc[:159] }}{% endblock %}
+{% block twitterDesc %}{{ v.desc[:159] }}{% endblock %}
+
+{% block appTags %}tags del title{% endblock %}
+
+{% block appBody %}
+<div id="intro" class="section scrollspy">
+    <div class="container">
+        <div class="row">
+            <div  class="col s12">
+                <h2 class="center header text_h3">{{ v.title }}</h2>
+                <div class="video-container">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/{{ v.url }}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <br />
+                <br />
+               {{ description_video(v.desc)|raw }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
